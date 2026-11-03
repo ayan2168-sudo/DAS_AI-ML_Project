@@ -1,0 +1,411 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 940" width="100%" height="100%" font-family="&#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <!-- Drop shadow for components -->
+    <filter id="shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.12" />
+    </filter>
+
+    <!-- Red propagation arrowhead -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#d92b2b" />
+    </marker>
+
+    <!-- Black RF input arrowhead -->
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#222222" />
+    </marker>
+
+    <!-- Internal isolator arrow -->
+    <marker id="arrow-iso" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#475569" />
+    </marker>
+
+    <!-- Coupler metallic gradient -->
+    <linearGradient id="coupler-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b0b7c0" />
+      <stop offset="50%" stop-color="#e2e6ea" />
+      <stop offset="100%" stop-color="#949ca6" />
+    </linearGradient>
+
+    <linearGradient id="coupler-grad-vert" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b0b7c0" />
+      <stop offset="50%" stop-color="#e2e6ea" />
+      <stop offset="100%" stop-color="#949ca6" />
+    </linearGradient>
+
+    <!-- Splitter yellow/gold gradient -->
+    <linearGradient id="splitter-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <!-- Circulator bronze gradient -->
+    <linearGradient id="circ-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#854d0e" />
+      <stop offset="50%" stop-color="#a16207" />
+      <stop offset="100%" stop-color="#713f12" />
+    </linearGradient>
+
+    <!-- Polarizer body gradient -->
+    <linearGradient id="pol-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1300" height="940" fill="#ffffff" />
+
+  <!-- ==================== OPTICAL FIBERS (YELLOW) ==================== -->
+  <g fill="none" stroke="#eab308" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Laser to 90/10 Splitter (A) -->
+    <line x1="660" y1="580" x2="520" y2="580" />
+
+    <!-- 10% Arm: Splitter (A) top-left through Polarizer (O) to 50/50 Coupler (K) bottom-right -->
+    <path d="M 420 572 C 390 572, 380 560, 380 535 L 380 440 C 380 422, 376 418, 370 418" />
+
+    <!-- 90% Arm: Splitter (A) bottom-left through Polarizer (P) to Isolator (B) -->
+    <path d="M 420 588 C 370 588, 352 605, 352 635 L 352 720 C 352 745, 368 755, 400 755" />
+
+    <!-- Isolator (B) to 50/50 Coupler (D) top-left -->
+    <path d="M 465 755 C 495 755, 500 782, 530 782" />
+
+    <!-- 50/50 Coupler (D) bottom-left through Polarizer (Q) to Isolator (C) -->
+    <path d="M 530 798 C 500 798, 495 825, 465 825" />
+
+    <!-- Isolator (C) to CLSD PD (F) -->
+    <line x1="400" y1="825" x2="310" y2="825" />
+
+    <!-- 50/50 Coupler (D) bottom-right to Faraday Mirror (E) -->
+    <path d="M 640 798 C 665 798, 665 830, 665 865" />
+
+    <!-- 50/50 Coupler (D) top-right to AOM 1 (G) IN -->
+    <line x1="640" y1="782" x2="770" y2="782" />
+
+    <!-- AOM 1 (G) OUT to I/P Fiber Connector -->
+    <line x1="875" y1="782" x2="962" y2="782" />
+
+    <!-- I/P Fiber Connector through FUT to O/P Fiber Connector -->
+    <path d="M 998 782 L 1090 782 L 1090 402 L 998 402" />
+    <!-- FUT Fiber Loops -->
+    <circle cx="1108" cy="592" r="22" fill="none" stroke="#eab308" stroke-width="3.5" />
+    <circle cx="1114" cy="592" r="22" fill="none" stroke="#eab308" stroke-width="3.5" />
+    <circle cx="1120" cy="592" r="22" fill="none" stroke="#eab308" stroke-width="3.5" />
+
+    <!-- O/P Fiber Connector to AOM 2 (H) IN -->
+    <line x1="962" y1="402" x2="875" y2="402" />
+
+    <!-- AOM 2 (H) OUT to 50/50 Coupler (I) bottom-right -->
+    <path d="M 770 402 C 725 402, 718 370, 718 320" />
+
+    <!-- 50/50 Coupler (I) bottom-left to 50/50 Coupler (K) top-right -->
+    <path d="M 702 320 C 702 375, 695 402, 650 402 L 370 402" />
+
+    <!-- 50/50 Coupler (I) top-left to DEAD -->
+    <path d="M 702 210 C 702 175, 682 165, 682 135" />
+
+    <!-- 50/50 Coupler (I) top-right to Faraday Mirror (J) -->
+    <path d="M 718 210 C 718 175, 745 160, 745 115" />
+
+    <!-- 50/50 Coupler (K) top-left to DEAD -->
+    <path d="M 260 402 C 235 402, 220 385, 220 362" />
+
+    <!-- 50/50 Coupler (K) bottom-left through Polarizer (N) to Circulator (L) top-right -->
+    <path d="M 260 418 C 235 418, 230 474, 205 474" />
+
+    <!-- Circulator (L) bottom-right to DEAD -->
+    <path d="M 205 490 C 228 490, 235 505, 250 515" />
+
+    <!-- Circulator (L) left to OLPD (M) -->
+    <line x1="115" y1="482" x2="72" y2="482" />
+  </g>
+
+  <!-- ==================== DIRECTION ARROWS (RED) ==================== -->
+  <g fill="none" stroke="#d92b2b" stroke-width="2.5" marker-end="url(#arrow-red)">
+    <!-- From Laser -->
+    <line x1="610" y1="580" x2="565" y2="580" />
+    <!-- 10% Split Upward (below Polarizer O) -->
+    <line x1="380" y1="552" x2="380" y2="518" />
+    <!-- 90% Split Downward (above Polarizer P) -->
+    <line x1="352" y1="620" x2="352" y2="655" />
+    <!-- Into CLSD PD (F) -->
+    <line x1="370" y1="825" x2="335" y2="825" />
+    <!-- Into AOM 1 (G) -->
+    <line x1="690" y1="782" x2="735" y2="782" />
+    <!-- Out of AOM 1 (G) -->
+    <line x1="895" y1="782" x2="935" y2="782" />
+    <!-- Into AOM 2 (H) -->
+    <line x1="935" y1="402" x2="895" y2="402" />
+    <!-- Out of AOM 2 (H) -->
+    <line x1="762" y1="402" x2="738" y2="402" />
+    <!-- From FM (J) reflection -->
+    <line x1="741" y1="138" x2="730" y2="170" />
+    <!-- Across top branch to Coupler K -->
+    <line x1="605" y1="402" x2="565" y2="402" />
+    <!-- Into OLPD (M) -->
+    <line x1="108" y1="482" x2="84" y2="482" />
+  </g>
+
+  <!-- ==================== FIBER OPTIC POLARIZERS (N, O, P, Q) ==================== -->
+  <!-- N: Vertical polarizer between Coupler K and Circulator L -->
+  <g filter="url(#shadow)">
+    <rect x="225" y="421" width="14" height="44" rx="2" fill="url(#pol-grad)" stroke="#1e293b" stroke-width="2.2" />
+    <g fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="232" y1="427" x2="232" y2="459" />
+      <path d="M 228.5 431 L 232 426 L 235.5 431" />
+      <path d="M 228.5 455 L 232 460 L 235.5 455" />
+    </g>
+  </g>
+
+  <!-- O: Horizontal polarizer on 10% arm -->
+  <g filter="url(#shadow)">
+    <rect x="358" y="475" width="44" height="14" rx="2" fill="url(#pol-grad)" stroke="#1e293b" stroke-width="2.2" />
+    <g fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="364" y1="482" x2="396" y2="482" />
+      <path d="M 368 478.5 L 363 482 L 368 485.5" />
+      <path d="M 392 478.5 L 397 482 L 392 485.5" />
+    </g>
+  </g>
+
+  <!-- P: Horizontal polarizer on 90% arm -->
+  <g filter="url(#shadow)">
+    <rect x="330" y="680" width="44" height="14" rx="2" fill="url(#pol-grad)" stroke="#1e293b" stroke-width="2.2" />
+    <g fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="336" y1="687" x2="368" y2="687" />
+      <path d="M 340 683.5 L 335 687 L 340 690.5" />
+      <path d="M 364 683.5 L 369 687 L 364 690.5" />
+    </g>
+  </g>
+
+  <!-- Q: Vertical polarizer between Coupler D and Isolator C -->
+  <g filter="url(#shadow)">
+    <rect x="490" y="790" width="14" height="44" rx="2" fill="url(#pol-grad)" stroke="#1e293b" stroke-width="2.2" />
+    <g fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="497" y1="796" x2="497" y2="828" />
+      <path d="M 493.5 800 L 497 795 L 500.5 800" />
+      <path d="M 493.5 824 L 497 829 L 500.5 824" />
+    </g>
+  </g>
+
+  <!-- ==================== OTHER OPTICAL COMPONENTS ==================== -->
+
+  <!-- LASER -->
+  <g transform="translate(660, 560)">
+    <g stroke="#d92b2b" stroke-width="2.5" stroke-linecap="round">
+      <line x1="0" y1="6" x2="0" y2="34" />
+      <line x1="-14" y1="20" x2="14" y2="20" />
+      <line x1="-10" y1="10" x2="10" y2="30" />
+      <line x1="-10" y1="30" x2="10" y2="10" />
+    </g>
+    <circle cx="0" cy="20" r="4" fill="#d92b2b" />
+    <text x="26" y="26" font-size="20" font-weight="700" fill="#1e293b" letter-spacing="1">LASER</text>
+  </g>
+
+  <!-- A: 90/10 SPLITTER -->
+  <g filter="url(#shadow)">
+    <rect x="420" y="564" width="100" height="32" rx="6" fill="url(#splitter-grad)" stroke="#b45309" stroke-width="1.5" />
+  </g>
+  <text x="470" y="554" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">90/10</text>
+  <text x="470" y="618" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">SPLITTER</text>
+  <text x="392" y="538" font-size="16" font-weight="700" fill="#1e293b">10%</text>
+  <text x="366" y="648" font-size="16" font-weight="700" fill="#1e293b">90%</text>
+
+  <!-- B: ISOLATOR B -->
+  <g filter="url(#shadow)">
+    <rect x="400" y="741" width="65" height="28" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5" />
+    <line x1="415" y1="755" x2="448" y2="755" stroke="#475569" stroke-width="2" marker-end="url(#arrow-iso)" />
+  </g>
+  <text x="432" y="732" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">ISOLATOR</text>
+
+  <!-- C: ISOLATOR C -->
+  <g filter="url(#shadow)">
+    <rect x="400" y="811" width="65" height="28" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5" />
+    <line x1="450" y1="825" x2="417" y2="825" stroke="#475569" stroke-width="2" marker-end="url(#arrow-iso)" />
+  </g>
+  <text x="432" y="860" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">ISOLATOR</text>
+
+  <!-- D: 50/50 COUPLER -->
+  <g filter="url(#shadow)">
+    <rect x="530" y="774" width="110" height="32" rx="6" fill="url(#coupler-grad)" stroke="#64748b" stroke-width="1.5" />
+  </g>
+  <text x="585" y="763" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">50/50</text>
+  <text x="585" y="828" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">COUPLER</text>
+
+  <!-- E: FARADAY MIRROR (FM) -->
+  <g filter="url(#shadow)">
+    <rect x="651" y="865" width="28" height="42" rx="3" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5" />
+    <line x1="651" y1="898" x2="679" y2="898" stroke="#334155" stroke-width="3" />
+  </g>
+  <text x="698" y="882" font-size="15" font-weight="700" fill="#1e293b">FM</text>
+
+  <!-- F: CLSD PD (Closed Loop Photodiode) -->
+  <g filter="url(#shadow)">
+    <path d="M 282 825 C 265 825, 260 842, 242 835" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+    <path d="M 298 807 A 18 18 0 0 0 280 825 A 18 18 0 0 0 298 843 Z" fill="#b45309" stroke="#78350f" stroke-width="1.5" />
+    <rect x="298" y="805" width="7" height="40" rx="2" fill="#d97706" stroke="#78350f" stroke-width="1.5" />
+  </g>
+  <text x="282" y="868" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">CLSD</text>
+  <text x="282" y="885" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">PD</text>
+  <text x="282" y="904" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">(80 MHz Beat)</text>
+
+  <!-- G: AOM 1 (-20 MHz) -->
+  <g filter="url(#shadow)">
+    <rect x="770" y="750" width="105" height="64" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.2" />
+  </g>
+  <text x="822" y="788" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">AOM 1</text>
+  <text x="752" y="774" text-anchor="end" font-size="13" font-weight="700" fill="#334155">IN</text>
+  <text x="890" y="774" text-anchor="start" font-size="13" font-weight="700" fill="#334155">OUT</text>
+  <text x="802" y="836" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">-20 MHz</text>
+  <line x1="822" y1="702" x2="822" y2="745" stroke="#222222" stroke-width="2" marker-end="url(#arrow-black)" />
+  <text x="822" y="693" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">AOM1 RF IN</text>
+
+  <!-- I/P FIBER CONNECTOR -->
+  <g filter="url(#shadow)">
+    <rect x="962" y="775" width="36" height="14" rx="2" fill="#4ade80" stroke="#16a34a" stroke-width="1.5" />
+    <rect x="975" y="768" width="10" height="28" rx="2" fill="#22c55e" stroke="#15803d" stroke-width="1.5" />
+  </g>
+  <text x="980" y="825" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">I/P FIBER</text>
+
+  <!-- FUT LABEL -->
+  <text x="1068" y="598" text-anchor="end" font-size="18" font-weight="700" fill="#1e293b">FUT</text>
+
+  <!-- O/P FIBER CONNECTOR -->
+  <g filter="url(#shadow)">
+    <rect x="962" y="395" width="36" height="14" rx="2" fill="#4ade80" stroke="#16a34a" stroke-width="1.5" />
+    <rect x="975" y="388" width="10" height="28" rx="2" fill="#22c55e" stroke="#15803d" stroke-width="1.5" />
+  </g>
+  <text x="980" y="442" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">O/P FIBER</text>
+
+  <!-- H: AOM 2 (-20 MHz) -->
+  <g filter="url(#shadow)">
+    <rect x="770" y="370" width="105" height="64" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.2" />
+  </g>
+  <text x="822" y="408" text-anchor="middle" font-size="18" font-weight="700" fill="#1e293b">AOM 2</text>
+  <text x="756" y="388" text-anchor="end" font-size="13" font-weight="700" fill="#334155">OUT</text>
+  <text x="888" y="388" text-anchor="start" font-size="13" font-weight="700" fill="#334155">IN</text>
+  <text x="802" y="456" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">-20 MHz</text>
+  <line x1="822" y1="322" x2="822" y2="365" stroke="#222222" stroke-width="2" marker-end="url(#arrow-black)" />
+  <text x="822" y="313" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">AOM2 RF IN</text>
+
+  <!-- I: 50/50 COUPLER (Vertical) -->
+  <g filter="url(#shadow)">
+    <rect x="694" y="210" width="32" height="110" rx="6" fill="url(#coupler-grad-vert)" stroke="#64748b" stroke-width="1.5" />
+  </g>
+  <text x="742" y="252" font-size="17" font-weight="700" fill="#1e293b">50/50</text>
+  <text x="742" y="274" font-size="15" font-weight="700" fill="#1e293b">COUPLER</text>
+
+  <!-- DEAD (Top of Coupler I) -->
+  <line x1="670" y1="135" x2="694" y2="135" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <text x="682" y="123" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">DEAD</text>
+
+  <!-- J: FARADAY MIRROR (FM) -->
+  <g filter="url(#shadow)">
+    <rect x="731" y="73" width="28" height="42" rx="3" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5" />
+    <line x1="731" y1="80" x2="759" y2="80" stroke="#334155" stroke-width="3" />
+  </g>
+  <text x="772" y="92" font-size="15" font-weight="700" fill="#1e293b">FM</text>
+
+  <!-- K: 50/50 COUPLER -->
+  <g filter="url(#shadow)">
+    <rect x="260" y="394" width="110" height="32" rx="6" fill="url(#coupler-grad)" stroke="#64748b" stroke-width="1.5" />
+  </g>
+  <text x="315" y="382" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">50/50</text>
+  <text x="295" y="448" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">COUPLER</text>
+
+  <!-- DEAD (Top-left of Coupler K) -->
+  <line x1="220" y1="348" x2="220" y2="374" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <text x="192" y="366" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">DEAD</text>
+
+  <!-- L: FIBER OPTIC CIRCULATOR -->
+  <g filter="url(#shadow)">
+    <rect x="115" y="466" width="90" height="32" rx="4" fill="url(#circ-grad)" stroke="#451a03" stroke-width="1.5" />
+    <path d="M 180 474 C 155 474, 155 490, 140 482" fill="none" stroke="#fef08a" stroke-width="1.8" stroke-linecap="round" />
+  </g>
+  <text x="155" y="518" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">FIBER OPTIC</text>
+  <text x="155" y="535" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">CIRCULATOR</text>
+
+  <!-- DEAD (Bottom-right of Circulator L) -->
+  <line x1="250" y1="503" x2="250" y2="529" stroke="#1e293b" stroke-width="4" stroke-linecap="round" />
+  <text x="278" y="521" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">DEAD</text>
+
+  <!-- M: OLPD (Open Loop Photodetector) -->
+  <g filter="url(#shadow)">
+    <path d="M 44 482 C 28 482, 22 498, 8 490" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
+    <path d="M 62 464 A 18 18 0 0 0 44 482 A 18 18 0 0 0 62 500 Z" fill="#b45309" stroke="#78350f" stroke-width="1.5" />
+    <rect x="62" y="462" width="7" height="40" rx="2" fill="#d97706" stroke="#78350f" stroke-width="1.5" />
+  </g>
+  <text x="58" y="524" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">OLPD</text>
+  <text x="58" y="578" text-anchor="middle" font-size="12" font-weight="600" fill="#475569">(40 MHz Beat)</text>
+
+  <!-- ==================== PURPLE COMPONENT MARKERS (A - Q) ==================== -->
+  <g font-size="16" font-weight="700" text-anchor="middle">
+    <!-- A -->
+    <circle cx="528" cy="542" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="528" y="548" fill="#6b21a8">A</text>
+
+    <!-- B -->
+    <circle cx="485" cy="728" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="485" y="734" fill="#6b21a8">B</text>
+
+    <!-- C -->
+    <circle cx="478" cy="862" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="478" y="868" fill="#6b21a8">C</text>
+
+    <!-- D -->
+    <circle cx="635" cy="825" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="635" y="831" fill="#6b21a8">D</text>
+
+    <!-- E -->
+    <circle cx="700" cy="905" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="700" y="911" fill="#6b21a8">E</text>
+
+    <!-- F -->
+    <circle cx="322" cy="876" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="322" y="882" fill="#6b21a8">F</text>
+
+    <!-- G -->
+    <circle cx="862" cy="838" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="862" y="844" fill="#6b21a8">G</text>
+
+    <!-- H -->
+    <circle cx="862" cy="456" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="862" y="462" fill="#6b21a8">H</text>
+
+    <!-- I -->
+    <circle cx="755" cy="300" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="755" y="306" fill="#6b21a8">I</text>
+
+    <!-- J -->
+    <circle cx="780" cy="118" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="780" y="124" fill="#6b21a8">J</text>
+
+    <!-- K -->
+    <circle cx="352" cy="448" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="352" y="454" fill="#6b21a8">K</text>
+
+    <!-- L -->
+    <circle cx="212" cy="535" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="212" y="541" fill="#6b21a8">L</text>
+
+    <!-- M -->
+    <circle cx="58" cy="550" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="58" y="556" fill="#6b21a8">M</text>
+
+    <!-- N (Polarizer before Circulator L) -->
+    <circle cx="203" cy="443" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="203" y="449" fill="#6b21a8">N</text>
+
+    <!-- O (Polarizer on 10% branch) -->
+    <circle cx="336" cy="482" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="336" y="488" fill="#6b21a8">O</text>
+
+    <!-- P (Polarizer on 90% branch) -->
+    <circle cx="308" cy="687" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="308" y="693" fill="#6b21a8">P</text>
+
+    <!-- Q (Polarizer between Coupler D and Isolator C) -->
+    <circle cx="522" cy="844" r="14" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.2" />
+    <text x="522" y="850" fill="#6b21a8">Q</text>
+  </g>
+</svg>
